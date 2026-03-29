@@ -1,39 +1,38 @@
 [
     {
-        "alt_text": "Close-up of calm, clear water surface with gentle ripples.",
+        "alt_text": "Close-up of smooth, flowing water with gentle ripples on the surface.",
         "tags": [
             "water",
             "ripples",
             "calm",
             "nature",
-            "tranquility",
             "liquid",
-            "reflection"
+            "tranquility",
+            "fluidity"
         ],
         "brand_safety_score": 10,
         "use_cases": [
             "Social Media Story",
             "Hero Website Banner",
-            "Background for Wellness Ad"
+            "Environmental Campaign"
         ],
         "filename": "download (1).jpg"
     },
     {
-        "alt_text": "A person meditating on a rock by the sea during sunset, surrounded by lush greenery.",
+        "alt_text": "A person meditating on a rock by the sea during a vibrant sunset, surrounded by foliage.",
         "tags": [
             "meditation",
             "sunset",
             "nature",
             "relaxation",
-            "serenity",
             "wellness",
-            "ocean",
-            "peaceful"
+            "peaceful",
+            "serenity"
         ],
         "brand_safety_score": 10,
         "use_cases": [
             "Social Media Story",
-            "Wellness Blog Feature",
+            "Wellness Blog Post",
             "Hero Website Banner"
         ],
         "filename": "download.jpg"
@@ -41,51 +40,51 @@
     {
         "alt_text": "Infographic explaining how fake Instagram login pages steal accounts in four steps: lure, fake login page, credential harvesting, and instant account takeover.",
         "tags": [
-            "cybersecurity",
-            "phishing",
-            "social media",
+            "Cybersecurity",
+            "Phishing",
+            "Social Media",
             "Instagram",
-            "account security",
-            "online safety",
-            "identity theft"
+            "Account Security",
+            "Online Safety",
+            "Two-Factor Authentication",
+            "Scam Awareness"
         ],
         "brand_safety_score": 8,
         "use_cases": [
             "Educational Blog Post",
-            "Cybersecurity Awareness Campaign",
-            "Social Media Awareness Post"
+            "Social Media Awareness Campaign",
+            "Cybersecurity Webinar"
         ],
         "filename": "How-fake-Instagram-login-pages-steal-your-account.jpg"
     },
     {
-        "alt_text": "Collage featuring a cartoon character holding a can of Driftwell beverage, alongside two people drinking from cans.",
+        "alt_text": "A collage featuring a cartoon character holding a can of driftwell blackberry lavender beverage, alongside two people drinking from cans in a modern setting.",
         "tags": [
             "beverage",
-            "cartoon",
             "driftwell",
-            "drinks",
+            "cartoon character",
+            "drinking",
             "relaxation",
-            "lifestyle",
-            "advertisement",
-            "branding"
+            "modern lifestyle",
+            "advertisement"
         ],
         "brand_safety_score": 9,
         "use_cases": [
             "Social Media Story",
             "Digital Ad Campaign",
-            "Product Launch Feature"
+            "Product Launch Promotion"
         ],
         "filename": "images.jpg"
     },
     {
-        "alt_text": "Close-up of a black smart ring placed on a textured surface, showcasing its sleek design and digital display.",
+        "alt_text": "Close-up of a black smart ring with digital display on a textured surface.",
         "tags": [
             "smart ring",
             "technology",
-            "wearable device",
+            "wearable",
             "digital display",
             "modern design",
-            "gadgets",
+            "gadget",
             "innovation"
         ],
         "brand_safety_score": 10,
