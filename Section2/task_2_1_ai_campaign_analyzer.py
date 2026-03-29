@@ -7,8 +7,8 @@ from openai import OpenAI, OpenAIError
 from dotenv import load_dotenv
 from pathlib import Path
 
-from models import AnalysisResponse
-from prompt import SYSTEM_PROMPT
+from Section2.helper.models import AnalysisResponse
+from Section2.helper.prompt import SYSTEM_PROMPT
 
 # Load environment variables (assumes .env in project root)
 env_path = Path(__file__).resolve().parent.parent / ".env"

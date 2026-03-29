@@ -56,7 +56,7 @@ def generate_ad_copy(brief: str, max_retries: int = 3) -> dict:
                     {"role": "user", "content": user_prompt}
                 ],
                 temperature=temperature,
-                max_tokens=1000, # OpenRouter will only check balance against the cost of 1,000 tokens
+                max_tokens=700, # Reduced to fit within current OpenRouter credit balance
             )
 
             # Extract the raw string from the model's response and parse it
