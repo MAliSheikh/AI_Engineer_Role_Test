@@ -7,8 +7,8 @@ from openai import OpenAI, OpenAIError
 from dotenv import load_dotenv
 from pathlib import Path
 
-from Section2.helper.models import AnalysisResponse
-from Section2.helper.prompt import SYSTEM_PROMPT
+from helper.models import AnalysisResponse
+from helper.prompt import SYSTEM_PROMPT
 
 # Load environment variables (assumes .env in project root)
 env_path = Path(__file__).resolve().parent.parent / ".env"
@@ -64,7 +64,7 @@ def generate_ai_response(extracted_text: str, stream: bool = False, model: str =
             {"role": "user", "content": extracted_text}
         ],
         temperature=temperature,
-        max_tokens=1500,
+        max_tokens=1500, # Adjust as needed for more detailed responses
         response_format={"type": "json_object"} if not stream else None,
         stream=stream
     )
@@ -108,4 +108,4 @@ async def analyze_brief_stream(
     return StreamingResponse(event_stream(), media_type="text/event-stream")
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("task_2_1_ai_campaign_analyzer:app", host="127.0.0.1", port=8000, reload=True)
