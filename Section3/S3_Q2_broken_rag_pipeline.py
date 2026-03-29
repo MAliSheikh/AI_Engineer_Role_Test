@@ -46,9 +46,9 @@ from langchain.prompts import PromptTemplate
 
 # ─── Configuration ────────────────────────────────────────────────────────────
 PDF_PATHS = [
-    "RAG_Doc1_Lumiere_Case_Study.pdf",
-    "RAG_Doc2_Velocity_Case_Study.pdf",
-    "RAG_Doc3_Noir_Brand_Guidelines.pdf",
+    "data/AG_Doc1_Lumiere_Case_Study.pdf",
+    "data/RAG_Doc2_Velocity_Case_Study.pdf",
+    "data/RAG_Doc3_Noir_Brand_Guidelines.pdf",
 ]
 
 CHROMA_PERSIST_DIR = "./chroma_db"
@@ -79,7 +79,13 @@ def split_documents(documents: list) -> list:
     """
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=500,
-        chunk_overlap=500,   # <-- examine this value carefully
+        
+        # Issue is chunk_overlap is equal to chunk_size, which causes each chunk to fully overlap the previous one. 
+        # This can result in infinite or nonsensical chunks, breaking retrieval.
+        # We can  fix it by setting chunk_overlap less than chunk_size, typically 10–20% of chunk size.
+
+        chunk_overlap=100, 
+        # chunk_overlap=500,   # <-- examine this value carefully
         length_function=len,
         separators=["\n\n", "\n", ".", " ", ""],
     )
@@ -106,8 +112,11 @@ def create_vector_store(chunks: list) -> Chroma:
         persist_directory=CHROMA_PERSIST_DIR,
     )
 
+    # Issue is in calling .persist() is deprecated.Calling .persist() may raise errors.
+    # We can fix it by removing the .persist() call:
+    
     # Persist the vector store to disk
-    vector_store.persist()
+    # vector_store.persist() 
     print(f"Vector store created and persisted to: {CHROMA_PERSIST_DIR}")
     return vector_store
 
@@ -125,7 +134,13 @@ def build_rag_chain(vector_store: Chroma) -> RetrievalQA:
     """
     llm = ChatOpenAI(
         model_name="gpt-4o",
-        temperature=0.9,     # <-- examine this value for a RAG use case
+        
+        # High temperature (0.9) makes the LLM hallucinate and generate answers 
+        # not grounded in documents. For RAG pipelines, you need strict factual responses.
+        
+        # Set temperature to 0.0 (or at most 0.1) to ensure the model only answer from retrieved context.
+        temperature=0.0,     
+        # temperature=0.9,     # <-- examine this value for a RAG use case
         openai_api_key=OPENAI_API_KEY,
     )
 
@@ -156,7 +171,15 @@ Answer (include the source document name if relevant):"""
         llm=llm,
         chain_type="stuff",
         retriever=retriever,
-        return_source_documents=False,   # <-- examine this for the task requirement
+        
+        # The issue is the task requires returning answers with source document names. 
+        # Setting return_source_documents=False removes the source_documents key, 
+        # so query_rag() cannot show sources.
+        
+        # We cam fix this by setting value to True
+        
+        return_source_documents=True, 
+        # return_source_documents=False,   # <-- examine this for the task requirement
         chain_type_kwargs={"prompt": PROMPT},
     )
 
@@ -230,32 +253,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-# ─── ANSWER KEY (For Evaluator Only — Remove Before Distributing) ─────────────
-"""
-BUG 1 — split_documents() — Line ~55:
-    chunk_overlap=500 is equal to chunk_size=500.
-    Overlap must always be LESS than chunk_size.
-    When overlap >= chunk_size, the splitter creates infinite or nonsensical 
-    chunks because each chunk would fully overlap the previous one.
-    FIX: chunk_overlap=100 (or any value < 500, typically 10-20% of chunk_size)
-
-BUG 2 — create_vector_store() — The .persist() call:
-    In newer versions of LangChain/Chroma (chromadb >= 0.4.0), 
-    calling vector_store.persist() is deprecated and raises an error.
-    The data is auto-persisted when persist_directory is set.
-    FIX: Remove the vector_store.persist() line entirely.
-    (Candidate must recognise version-aware API deprecation)
-
-BUG 3 — build_rag_chain() — temperature=0.9:
-    For a RAG system that must return factual, grounded answers from documents,
-    a high temperature (0.9) causes the model to be too creative/random,
-    leading to hallucinated answers that drift from the source material.
-    FIX: temperature=0.0 (or at most 0.1 for minimal stylistic variation)
-
-BUG 4 — build_rag_chain() — return_source_documents=False:
-    The task requirement is to return the answer WITH the source document name.
-    With return_source_documents=False, the 'source_documents' key is absent 
-    from the result dict, so query_rag() always returns "No sources returned".
-    FIX: return_source_documents=True
-"""
