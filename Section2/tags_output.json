@@ -1,25 +1,25 @@
 [
     {
-        "alt_text": "Close-up of smooth, flowing water with gentle ripples on the surface.",
+        "alt_text": "Close-up view of calm, rippling water surface with soft lighting.",
         "tags": [
             "water",
             "ripples",
             "calm",
             "nature",
-            "liquid",
-            "tranquility",
-            "fluidity"
+            "serenity",
+            "reflection",
+            "tranquility"
         ],
         "brand_safety_score": 10,
         "use_cases": [
-            "Social Media Story",
             "Hero Website Banner",
-            "Environmental Campaign"
+            "Social Media Story",
+            "Background for Wellness Campaign"
         ],
         "filename": "download (1).jpg"
     },
     {
-        "alt_text": "A person meditating on a rock by the sea during a vibrant sunset, surrounded by foliage.",
+        "alt_text": "Person meditating on a rock by the sea during a sunset.",
         "tags": [
             "meditation",
             "sunset",
@@ -27,71 +27,71 @@
             "relaxation",
             "wellness",
             "peaceful",
-            "serenity"
+            "outdoors"
         ],
         "brand_safety_score": 10,
         "use_cases": [
             "Social Media Story",
-            "Wellness Blog Post",
-            "Hero Website Banner"
+            "Hero Website Banner",
+            "Wellness Blog Post"
         ],
         "filename": "download.jpg"
     },
     {
-        "alt_text": "Infographic explaining how fake Instagram login pages steal accounts in four steps: lure, fake login page, credential harvesting, and instant account takeover.",
+        "alt_text": "Infographic explaining how fake Instagram login pages steal accounts. Steps include: 1) The lure via DM, email, or ad claiming issues like copyright violation. 2) The fake login page mimicking Instagram. 3) Credential and MFA harvesting. 4) Instant account takeover by changing email, password, and enabling 2FA.",
         "tags": [
-            "Cybersecurity",
-            "Phishing",
-            "Social Media",
             "Instagram",
+            "Phishing",
+            "Cybersecurity",
             "Account Security",
+            "Social Media",
             "Online Safety",
-            "Two-Factor Authentication",
-            "Scam Awareness"
+            "Fraud Prevention"
         ],
         "brand_safety_score": 8,
         "use_cases": [
-            "Educational Blog Post",
             "Social Media Awareness Campaign",
-            "Cybersecurity Webinar"
+            "Cybersecurity Blog Post",
+            "Educational Webinar Slide"
         ],
         "filename": "How-fake-Instagram-login-pages-steal-your-account.jpg"
     },
     {
-        "alt_text": "A collage featuring a cartoon character holding a can of driftwell blackberry lavender beverage, alongside two people drinking from cans in a modern setting.",
+        "alt_text": "Collage featuring a cartoon character holding a driftwell can and two people drinking beverages.",
         "tags": [
             "beverage",
+            "cartoon",
             "driftwell",
-            "cartoon character",
-            "drinking",
+            "hydration",
+            "lifestyle",
             "relaxation",
-            "modern lifestyle",
+            "branding",
             "advertisement"
         ],
         "brand_safety_score": 9,
         "use_cases": [
             "Social Media Story",
-            "Digital Ad Campaign",
-            "Product Launch Promotion"
+            "Hero Website Banner",
+            "Digital Ad Campaign"
         ],
         "filename": "images.jpg"
     },
     {
-        "alt_text": "Close-up of a black smart ring with digital display on a textured surface.",
+        "alt_text": "A close-up image of a sleek black ring placed on a textured dark surface, with a blurred background.",
         "tags": [
-            "smart ring",
-            "technology",
-            "wearable",
-            "digital display",
-            "modern design",
-            "gadget",
-            "innovation"
+            "ring",
+            "jewelry",
+            "accessory",
+            "black",
+            "minimalist",
+            "fashion",
+            "close-up"
         ],
         "brand_safety_score": 10,
         "use_cases": [
             "Social Media Story",
-            "Product Advertisement",
-            "Tech Blog Feature"
+            "Product Detail Page",
+            "Online Jewelry Catalog"
         ],
         "filename": "jerry-kavan-3ayB2SanzYQ-unsplash.jpg"
     }

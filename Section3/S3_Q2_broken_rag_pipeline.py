@@ -46,9 +46,9 @@ from langchain.prompts import PromptTemplate
 
 # ─── Configuration ────────────────────────────────────────────────────────────
 PDF_PATHS = [
-    "data/AG_Doc1_Lumiere_Case_Study.pdf",
-    "data/RAG_Doc2_Velocity_Case_Study.pdf",
-    "data/RAG_Doc3_Noir_Brand_Guidelines.pdf",
+    "AG_Doc1_Lumiere_Case_Study.pdf",
+    "RAG_Doc2_Velocity_Case_Study.pdf",
+    "RAG_Doc3_Noir_Brand_Guidelines.pdf",
 ]
 
 CHROMA_PERSIST_DIR = "./chroma_db"
@@ -115,7 +115,6 @@ def create_vector_store(chunks: list) -> Chroma:
     # Issue is in calling .persist() is deprecated.Calling .persist() may raise errors.
     # We can fix it by removing the .persist() call:
     
-    # Persist the vector store to disk
     # vector_store.persist() 
     print(f"Vector store created and persisted to: {CHROMA_PERSIST_DIR}")
     return vector_store
