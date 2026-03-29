@@ -68,4 +68,10 @@ task_3_3_ai_prompt.txt
 Task: 4
 task_3_4_image_scoring.pdf
 
+
+Task: 5
+Architecture Diagram Link: https://drive.google.com/file/d/1omkYwoeOd36duP_uCSUltNOzxxs4vQWJ/view?usp=sharing
+
+and file name 
+task3_5_architecture_diagram.pdf
 ```
