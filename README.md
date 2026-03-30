@@ -31,7 +31,12 @@ OPENROUTER_API_KEY=your_openrouter_key_here
 
 ### Section 1: Prompt Engineering
 ```bash
+Task 1:
 uv run Section1\task_1_1_copy_generator.py
+
+
+Task 2:
+task_1_2_prompt.pdf
 ```
 
 ### Section 2: Building AI Tools
@@ -63,7 +68,7 @@ uv run Section3\S3_Q2_broken_rag_pipeline.py
 
 
 Task: 3
-task_3_3_ai_prompt.txt
+task_3_3_ai_prompt.pdf
 
 Task: 4
 task_3_4_image_scoring.pdf
